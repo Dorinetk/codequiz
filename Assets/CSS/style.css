@@ -17,17 +17,21 @@ body {
   background-color: #f9fbfd;
 }
 
-.wrapper {
+.container {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
+  text-align: center;
 }
 
 header {
   text-align: center;
   padding: 20px;
-  padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  padding-top: 30px;
+  color:blue;
+  font-size: x-large;
+  font-weight: bold;
+  
 }
 
 .card {
@@ -40,36 +44,21 @@ header {
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
 }
 
-.card-header::after {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-}
 
 .card-body {
   min-height: 100px;
+  margin: auto;
+  padding-bottom: 30px;
 }
 
-.card-footer {
-  text-align: center;
-}
-
-.card-footer::before {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-}
-
-.card-footer::after {
-  content: " ";
-  display: block;
-  clear: both;
+#questionsbox {
+  display: grid;
+  margin: 10px;
 }
 
 .btn {
@@ -97,26 +86,20 @@ button[disabled] {
   float: right;
 }
 
-#password {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  display: block;
-  width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
-  font-size: 1.2rem;
+.geninfo {
+  color: blue;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
-  resize: none;
-  overflow: hidden;
+  font-weight: bold;
+  font-weight: bold;
+  padding-bottom: 20px;
+  text-align: center;
+
 }
+
+.hide {
+  display: none;
+} 
+
 
 @media (max-width: 690px) {
   .btn {
@@ -125,9 +108,7 @@ button[disabled] {
     padding: 10px 15px;
   }
 
-  #password {
-    font-size: 1rem;
-  }
+ 
 }
 
 @media (max-width: 500px) {

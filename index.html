@@ -7,68 +7,73 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- css-->
+    <link rel="stylesheet" type="text/css" href="./Assets/CSS/reset.css">
+    <link rel="stylesheet" href="./Assets/CSS/style.css">  
 
-    <title>Javascript Code</title>
+    <title>JS Quiz Code</title>
   </head>
   <body>
       <header class="header">
         <h1>Javascript Quiz Challenge</h1> 
-        <!--<p> The following quiz will test your knowlewdge about Javascript. </p> -->
-
-        <!--  All questions must be answered in 5 mins. Your score will be displayed at
-            the end of the quizz. Good luck!    -->
-        </p>
+      
       </header>
-      <div class="container"></div>
-      <div class="row">
-          <div class="col">
+      <div class="container">
+          <div class="row header">
+            <div class="col">
+              <!-- Displays only at the begining of the quizz and hides as JS function is launche-->
+              <p id="intro">  The following quiz will test your knowlewdge about Javascript. </p> 
+            </div>
+          </div>
+          <div class="row">
+            <div class="col card-body">
                 <!-- To launch the quizz below the area--> 
                 
-                <button id="start">Start</button>
-                <hr>
-          </div>
-          <div class="col">
-            <!-- To output the timer-->
-            <p> Time left:<span id="timer"> </span> </p>
-            
-          </div>
-      </div>
-      <div class="row"> 
-        <!--  quiz questions-->
-        <!-- Each question should be a submit button-->
-        <!-- we start with a submit button for all questions -->
-          <div class="row">
-              <div class="col" id="questions">
+                <button id="start" class="btn">Start</button>
                 
+            </div>
+            <div class="col hide geninfo" id="qtimer">
+              <!-- To output the timer-->
+                <p  > Time left: <span id="timer"> </span> s </p>
               </div>
           </div>
-          
-           <div class="row">
-             <div class="col">
-              <button id="submit">  </button>
+        
+        <!--  quiz questions-->
+        <!-- Each answer a1, is a button, when user clicks response is validated-->
+        
+          <div class="row hide card" >
+              <div class="col" id="questionsbox">
+                <p >question: <span id="questions"> </span> </p>
+                <button  class="btn" >  <span id="answer1"> a1  </span></button>
+                <button  class="btn" >  <span id="answer2"> a2  </span></button>
+                <button  class="btn" >  <span id="answer3"> a3 </span>  </button>
+                <!-- <button class="btn" > Next </button> -->
+              </div>
+              <div class="row hide geninfo">
+                <div class="col">
+                   <p>The answer is: <span id="correctans">  </span></p>
+                </div>
              </div>
-              
-           </div>
-      
-        </div>
-
-        <!-- quizz answers-->
-        <div class="row">
-          <div class="col" id="answwer">
-
           </div>
-       </div>
-       <div class="row">
+          <!-- quizz answers-->
+          
+      
          <!-- quizz score -->
-          <div class="col" id="score">
-
+         <div class="row hide geninfo">
+            <div class="col">
+              <p> Your score is: <span id="score">  </span></p>  
+            </div>
+          
           </div>
-      <div>
-      
-       
-
+          <div class="row hide geninfo">
+             <div> 
+              <p id="name-input"> All done!</p>
+              <!--  input of the name  -->
+           </div> 
+          </div>
     </div>
     <!-- Local JS -->
+    <script src="./Assets/JS/questions.js"></script>
     <script src="./Assets/JS/script.js"></script>
     <!-- Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
