@@ -6,6 +6,8 @@ var showTimer = document.getElementById('timer');
 var showCard = document.getElementById("cardbox")
 var questionElement = document.getElementById('questionsbox');
 var currentQuestion = document.getElementById("question");
+var showrightAnswer = document.getElementById("correctans");
+var holdrightAnswer = document.getElementById("geninfo");
 var corAnswer = document.getElementById('correctans');
 var quizScore = document.getElementById('score');
 var quizStorage = document.getElementById("name-input");
@@ -26,16 +28,75 @@ var score = 0;
 // interval to display each question in seconds
 var initialTimerInterval = 3;
 var timer = 0;
+var initialTimer;
 
 
-//displays a question with ID index 
-function showQuestion() {
 
-  var currentContent = Questions[question][currentQuestionsIndex];
-  // show the first question
-  console.log(currentContent);
-  currentQuestion.textContent = currentContent;
- }
+
+
+// handles timer to show next question for 3s
+function prepareNextQuestion() {
+  var timeLeft = initialTimer;
+
+  var countdownId = setInterval(function () {
+    showTimer.textContent = timeLeft + " seconds remaining...";
+
+    if (timeLeft === 0) {
+      clearInterval(countdownId);
+      countdownEl.textContent = "";
+     
+    }
+
+    timeLeft--;
+  }, 1000);
+  showQuestion();
+
+}
+
+//displays a question with answers to populate the buttons
+function showQuestion(index) {
+  
+  //displays question at index and possible answers
+ var index;
+  currentQuestion.textContent = Questions[index];
+
+  console.log(Questions[index]); 
+  // displays questions for corresponding answer array
+  for (i=0; i<Questions.length; i++){
+
+    var currentAnsElement = document.createElement("button");
+    currentAnsElement.textContent = Answers[index][i];
+    questionElement.appendChild(currentAnsElement);
+    currentAnsElement.setAttribute("class","btn");
+    currentAnsElement.setAttribute("id","btn(i)");
+  }
+  
+  //grab the button on which there is a click
+  //call function to verify the right answer
+  var currentSubmit = currentAnsElement.addEventListener("click",function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var result;
+    for (i=0;i<Answers.length;i++){
+      //check if answer is true to display
+      if (JSON.stringify(Answers[i]) === JSON.stringify(Correctanswer[i])){
+        currentSubmit = true;
+
+        holdrightAnswer.classList.add("hide")
+        showrightAnswer.textContent = "true";
+        score++
+      } else {
+        currentSubmit = false;
+      }
+     console.log(currentSubmit);
+     console.log(score);
+    }
+  });  
+  
+  //call function to set up timer and prepare next question
+  prepareNextQuestion();
+  
+}
   
 
 //on start, launches the quizGenerator
@@ -65,9 +126,8 @@ function quizGenerator(){
   quizTimer.classList.remove("hide")
   // display the box for question element
   showCard.classList.remove("hide")
+  //call this function to show questions
   showQuestion(currentQuestionsIndex);
-  
-  //setNextQuestion()
 }
 
 
@@ -87,7 +147,7 @@ function quizGenerator(){
   
   
 
-  
+
 
   
 
