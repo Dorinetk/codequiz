@@ -9,7 +9,5 @@ The link to the deployed version: ![alt](https://dorinetk.github.io/codequiz/)
 
 
 view of initial launching screen: ![launchview](./Assets/Images/launchimg.png)
-view of the screen at click of launch process 
-![viewofemptyquestion](./Assets/Images/viewafterlaunch2.png)
-view of first question elements and decrementing timer: ![viewoffirstquestion](./Assets/Images/firstquestion.png)
+view of first question elements and decrementing timer: ![viewoffirstquestion](./Assets/Images/viewafterlaunch2.png)
 
