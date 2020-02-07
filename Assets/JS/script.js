@@ -49,7 +49,7 @@ function prepareNextQuestion() {
 
     timeLeft--;
   }, 1000);
-  showQuestion();
+  //showQuestion();
 
 }
 
