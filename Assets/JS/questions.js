@@ -1,32 +1,24 @@
 //holds the array of questions 
 // MyQuestions is an array with objects to hold the questions, answers and correctanswer
-// object format  for each entry: {question: a question, answers: [t{ext:an answer, correct: true or false}]
+// object format  for each entry: {question: a question, answers=[], correctanswer in answers array
 
 
-var Myquestions = [
+var Questions = [
     {
       question: "Inside which HTML element do we put the JavaScript?",
-      answers: [ 
-        {text: "<js>", correct: false},
-        {text: "<scripting>", correct: false},
-        {text:"<script>", correct: true}
-      ]
+      answers: [ "<js>", "<scripting>","<script>"],
+      answers: 3
     },
     {
         question: "Which of the following is not an assignment operator in JS?",
-        answers: [
-            {text: "+", correct: true},
-        {text: "=", correct: false},
-        {text:"+=", correct: false}
-    ]
+        answers: ["+", "=","+="],
+        answwers: 1
     },
       {
         question: "What is the correct syntax for referring the JS file in HTML document?",
-        answers: [
-            {text: "<script src=...>", correct: true},
-        {text: "<script href=...>", correct: false},
-        {text:"<script name=...>", correct: false}
-        ]
+        answers: ["<script src=...>", "<script href=...>", "<script name=...>"],
+        answers: 1
+        
       }
     ];
 
